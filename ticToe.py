@@ -43,11 +43,19 @@ while gameisdone()==False and i<10:
     print("|_" + str(x[6]) + "_|" + "|_" + str(x[7]) + "_|" + "|_" + str(x[8]) + "_|")
     if i%2==1:
         place =input("Player 1 please choose your placement...1-9 : ")
-        x[int(place)-1] = 'X'
+        if isOcuppied(int(place)-1)==False:
+            x[int(place)-1] = 'X'
+        else:
+            print("This square is occupied , please choose another one Player 1")
+            i=i-1
 
     else:
         place = input("Player 2 please choose your placement...1-9 : ")
-        x[int(place)-1] = 'O'
+        if isOcuppied(int(place)-1)==False:
+            x[int(place)-1] = 'O'
+        else:
+            print("This square is occupied , please choose another Player 2")
+            i=i-1
 
 
     i=i+1
